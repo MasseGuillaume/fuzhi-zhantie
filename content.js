@@ -5,15 +5,16 @@ document.addEventListener("keyup", (event) => {
     const targetSel = document.querySelector("[jsname=jqKxS]");
 
     if (pingyingSel && sourceSel && targetSel) {
+      const out =  [
+        pingyingSel.innerText.toLowerCase(),
+        sourceSel.value,
+        targetSel.innerText
+      ].join("\t");
 
-      console.log(pingyingSel.innerText);
-      console.log(sourceSel.value);
-      console.log(targetSel.innerText);
-
+      console.log(out);
+      navigator.clipboard.writeText(out);
     } else {
       console.log("miss");
     }
-  } else {
-    console.log(event);
   }
 });    
